@@ -1,0 +1,18 @@
+1. Given: Prevalence = 5%, Sensitivity = 90%, Specifitivity = 95%
+
+Suppose a population of 100 people, accroding to the prevalence given, the total positive cases in the population is 5. Thus, True Positive (TP) + False Negative (FN) = 5; True Negative + False Positive = 95. Also, according to the fromulas of sensitivity and specifitivity, TP/(TP+FN) = 90%; TN/(TN+FP) = 95%. Now, solve the group of above four equations, we get TP = 4.5, FP = 4.75. Plug them into the formula of ppsotive predictive value = TP/(TP + FP) = 48.6% ≈49%.
+
+2. Classification Problem: Determinde if a number is odd or not in numbers 0~99
+Model: If a number is a mutilication of 4, then it is even, otherwise it is not.
+Results: TP = 24, TN = 50, FP = 0, FN = 26
+Evaluation:
+	Confusion Matrix:
+		[24, 0 ]
+		[26, 50]
+	Accuracy = (TP + TN) / (TP + TN + FP + FN) = 74%
+	Precision = TP / (TP + FP) = 100%
+	Recall = TP / (TP + FN) = 48%
+	F1 Score = 2 * (Precision*Recall)/(Precision+Recall) = 64.86%
+
+Accuracy is to measure the portion of correctly predicted samples over the whole sample space, thus we apply this indicator here and shows that our model predicts the samples with an accuracy rate of 74%.
+Precision is to mearsure the portion of positive cases that are correctly predicted by our model over the total positive cases predicted, here we have a prescision level of 100%, meaning that all positive cases predicted by our model are true positive cases. Recall is to measure the postion of correctly predicted positive cases over the total true positive cases in the sample space, or how many true positive cases were ignored or misreported by the model, here we have such a value of 48%, meaning that 52% of the true positive cases were not reported by the model. F1-score is the harmonic mean of precision and recall, it aims to provide an overall evaluation combining precision and recall. Here we have a high precision and low recall, thus the F1-score is relatively low.
